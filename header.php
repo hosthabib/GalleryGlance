@@ -14,20 +14,18 @@
 		    <h1><span>Gallery</span>Glance</h1>
 		  </div>
 		  <div class="w3-col m3 l3">
-		    <input class="w3-input" type="text" placeholder="Search...">
+			<form method="get" action="<?php echo esc_url(home_url('/')); ?>">
+		    <input name="s"class="w3-input" type="text" placeholder="Search...">
+			</form>
 		  </div>
 		</div>
 	</header>
 
 	<div class="w3-row">
 	  <div class="w3-col m3 l3">
-	   <ul class="w3-ul">
-	   	<li><a href="#">Nature</a></li>
-	   	<li><a href="#">Animals</a></li>
-	   	<li><a href="#">Objects</a></li>
-	   	<li><a href="#">People</a></li>
-	   	<li><a href="#">Abstract</a></li>
-	   </ul>
-	  </div>
+	   <?php if(is_active_sidebar('sidebar')) : ?>
+		<?php dynamic_sidebar('sidebar'); ?>
+		<?php endif; ?>
+	</div>
 	  <div class="w3-col m9 l9">
 	   <div class="w3-row">
